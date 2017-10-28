@@ -1,3 +1,4 @@
+/* eslint-disable import/first */
 /**
  * # LoginForm-test.js
  *
@@ -27,8 +28,7 @@ import React from 'react'
 
 import LoginForm from '../LoginForm'
 
-import ReactTestUtils from 'react-addons-test-utils'
-const renderer = ReactTestUtils.createRenderer()
+import ShallowRenderer from 'react-test-renderer/shallow'
 
 const {
   REGISTER,
@@ -46,6 +46,7 @@ describe('LoginForm', () => {
    * component has the correct data
    */
   function snapshotForm (props) {
+    const renderer = new ShallowRenderer()
     renderer.render(<LoginForm {...props} />)
     const tree = renderer.getRenderOutput()
     expect(tree).toMatchSnapshot()

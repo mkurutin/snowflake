@@ -8,35 +8,17 @@
  */
 'use strict'
 
-/**
- * ## Imports
- *
- * validate and underscore
- *
- */
 import validate from 'validate.js'
 import _ from 'underscore'
-/**
- * ### Translations
- */
-var I18n = require('react-native-i18n')
-import Translations from '../lib/Translations'
-I18n.translations = Translations
 
-/**
- * ## Email validation setup
- * Used for validation of emails
- */
+import I18n from './I18n'
+
 const emailConstraints = {
   from: {
     email: true
   }
 }
 
-/**
-* ## username validation rule
-* read the message.. ;)
-*/
 const usernamePattern = /^[a-zA-Z0-9]{6,12}$/
 const usernameConstraints = {
   username: {
@@ -47,10 +29,6 @@ const usernameConstraints = {
   }
 }
 
-/**
-* ## password validation rule
-* read the message... ;)
-*/
 const passwordPattern = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,12}$/
 const passwordConstraints = {
   password: {
@@ -82,15 +60,15 @@ export default function fieldValidation (state, action) {
      */
     case ('username'): {
       let validUsername = _.isUndefined(validate({username: value},
-                                                usernameConstraints))
+        usernameConstraints))
       if (validUsername) {
         return state.setIn(['form', 'fields', 'usernameHasError'],
-                         false)
-        .setIn(['form', 'fields', 'usernameErrorMsg'], '')
+          false)
+          .setIn(['form', 'fields', 'usernameErrorMsg'], '')
       } else {
         return state.setIn(['form', 'fields', 'usernameHasError'], true)
-        .setIn(['form', 'fields', 'usernameErrorMsg'],
-               I18n.t('FieldValidation.valid_user_name'))
+          .setIn(['form', 'fields', 'usernameErrorMsg'],
+            I18n.t('FieldValidation.valid_user_name'))
       }
     }
 
@@ -100,13 +78,13 @@ export default function fieldValidation (state, action) {
      */
     case ('email'): {
       let validEmail = _.isUndefined(validate({from: value},
-                                             emailConstraints))
+        emailConstraints))
       if (validEmail) {
         return state.setIn(['form', 'fields', 'emailHasError'], false)
       } else {
         return state.setIn(['form', 'fields', 'emailHasError'], true)
-        .setIn(['form', 'fields', 'emailErrorMsg'],
-                 I18n.t('FieldValidation.valid_email'))
+          .setIn(['form', 'fields', 'emailErrorMsg'],
+            I18n.t('FieldValidation.valid_email'))
       }
     }
 
@@ -116,16 +94,16 @@ export default function fieldValidation (state, action) {
      */
     case ('password'): {
       let validPassword = _.isUndefined(validate({password: value},
-                                               passwordConstraints))
+        passwordConstraints))
       if (validPassword) {
         return state.setIn(['form', 'fields', 'passwordHasError'],
-                         false)
-        .setIn(['form', 'fields', 'passwordErrorMsg'],
-               '')
+          false)
+          .setIn(['form', 'fields', 'passwordErrorMsg'],
+            '')
       } else {
         return state.setIn(['form', 'fields', 'passwordHasError'], true)
-        .setIn(['form', 'fields', 'passwordErrorMsg'],
-          I18n.t('FieldValidation.valid_password'))
+          .setIn(['form', 'fields', 'passwordErrorMsg'],
+            I18n.t('FieldValidation.valid_password'))
       }
     }
 
@@ -136,16 +114,16 @@ export default function fieldValidation (state, action) {
     case ('passwordAgain'):
       var validPasswordAgain =
           _.isUndefined(validate({password: state.form.fields.password,
-                                confirmPassword: value}, passwordAgainConstraints))
+            confirmPassword: value}, passwordAgainConstraints))
       if (validPasswordAgain) {
         return state.setIn(['form', 'fields', 'passwordAgainHasError'],
-                         false)
-        .setIn(['form', 'fields', 'passwordAgainErrorMsg'], '')
+          false)
+          .setIn(['form', 'fields', 'passwordAgainErrorMsg'], '')
       } else {
         return state.setIn(['form', 'fields', 'passwordAgainHasError'],
-                          true)
-        .setIn(['form', 'fields', 'passwordAgainErrorMsg'],
-        I18n.t('FieldValidation.valid_password_again'))
+          true)
+          .setIn(['form', 'fields', 'passwordAgainErrorMsg'],
+            I18n.t('FieldValidation.valid_password_again'))
       }
 
     /**
@@ -154,8 +132,7 @@ export default function fieldValidation (state, action) {
      */
     case ('showPassword'):
       return state.setIn(['form', 'fields',
-                                'showPassword'], value)
-
+        'showPassword'], value)
   }
   return state
 }

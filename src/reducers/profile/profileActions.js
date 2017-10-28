@@ -4,11 +4,10 @@
  * The actions to support the users profile
  */
 'use strict'
-/**
- * ## Imports
- *
- * The actions for profile
- */
+
+import {appAuthToken} from '../../lib/AppAuthToken'
+import BackendFactory from '../../lib/BackendFactory'
+
 const {
   GET_PROFILE_REQUEST,
   GET_PROFILE_SUCCESS,
@@ -20,13 +19,6 @@ const {
 
   ON_PROFILE_FORM_FIELD_CHANGE
 } = require('../../lib/constants').default
-
-/**
- * BackendFactory - base class for server implementation
- * AppAuthToken for localStorage sessionToken access
- */
-const BackendFactory = require('../../lib/BackendFactory').default
-import {appAuthToken} from '../../lib/AppAuthToken'
 
 /**
  * ## retreiving profile actions

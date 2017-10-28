@@ -1,3 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
 exports[`LoginForm FORGOT_PASSWORD password fields are not secured if shown 1`] = `
 <Form
   i18n={
@@ -120,6 +122,9 @@ exports[`LoginForm FORGOT_PASSWORD password fields are not secured if shown 1`] 
       "pickerContainer": Object {
         "error": Object {
           "borderColor": "#a94442",
+          "borderRadius": 4,
+          "borderWidth": 1,
+          "marginBottom": 4,
         },
         "normal": Object {
           "borderColor": "#cccccc",
@@ -168,7 +173,8 @@ exports[`LoginForm FORGOT_PASSWORD password fields are not secured if shown 1`] 
           "fontSize": 17,
           "height": 36,
           "marginBottom": 5,
-          "padding": 7,
+          "paddingHorizontal": 7,
+          "paddingVertical": 7,
         },
         "normal": Object {
           "borderColor": "#cccccc",
@@ -178,7 +184,8 @@ exports[`LoginForm FORGOT_PASSWORD password fields are not secured if shown 1`] 
           "fontSize": 17,
           "height": 36,
           "marginBottom": 5,
-          "padding": 7,
+          "paddingHorizontal": 7,
+          "paddingVertical": 7,
         },
         "notEditable": Object {
           "backgroundColor": "#eeeeee",
@@ -189,7 +196,8 @@ exports[`LoginForm FORGOT_PASSWORD password fields are not secured if shown 1`] 
           "fontSize": 17,
           "height": 36,
           "marginBottom": 5,
-          "padding": 7,
+          "paddingHorizontal": 7,
+          "paddingVertical": 7,
         },
       },
       "textboxView": Object {
@@ -214,7 +222,8 @@ exports[`LoginForm FORGOT_PASSWORD password fields are not secured if shown 1`] 
     Object {
       "email": "email",
     }
-  } />
+  }
+/>
 `;
 
 exports[`LoginForm FORGOT_PASSWORD should display  errors and  values 1`] = `
@@ -339,6 +348,9 @@ exports[`LoginForm FORGOT_PASSWORD should display  errors and  values 1`] = `
       "pickerContainer": Object {
         "error": Object {
           "borderColor": "#a94442",
+          "borderRadius": 4,
+          "borderWidth": 1,
+          "marginBottom": 4,
         },
         "normal": Object {
           "borderColor": "#cccccc",
@@ -387,7 +399,8 @@ exports[`LoginForm FORGOT_PASSWORD should display  errors and  values 1`] = `
           "fontSize": 17,
           "height": 36,
           "marginBottom": 5,
-          "padding": 7,
+          "paddingHorizontal": 7,
+          "paddingVertical": 7,
         },
         "normal": Object {
           "borderColor": "#cccccc",
@@ -397,7 +410,8 @@ exports[`LoginForm FORGOT_PASSWORD should display  errors and  values 1`] = `
           "fontSize": 17,
           "height": 36,
           "marginBottom": 5,
-          "padding": 7,
+          "paddingHorizontal": 7,
+          "paddingVertical": 7,
         },
         "notEditable": Object {
           "backgroundColor": "#eeeeee",
@@ -408,7 +422,8 @@ exports[`LoginForm FORGOT_PASSWORD should display  errors and  values 1`] = `
           "fontSize": 17,
           "height": 36,
           "marginBottom": 5,
-          "padding": 7,
+          "paddingHorizontal": 7,
+          "paddingVertical": 7,
         },
       },
       "textboxView": Object {
@@ -433,7 +448,8 @@ exports[`LoginForm FORGOT_PASSWORD should display  errors and  values 1`] = `
     Object {
       "email": "email",
     }
-  } />
+  }
+/>
 `;
 
 exports[`LoginForm FORGOT_PASSWORD should display without errors and without values 1`] = `
@@ -558,6 +574,9 @@ exports[`LoginForm FORGOT_PASSWORD should display without errors and without val
       "pickerContainer": Object {
         "error": Object {
           "borderColor": "#a94442",
+          "borderRadius": 4,
+          "borderWidth": 1,
+          "marginBottom": 4,
         },
         "normal": Object {
           "borderColor": "#cccccc",
@@ -606,7 +625,8 @@ exports[`LoginForm FORGOT_PASSWORD should display without errors and without val
           "fontSize": 17,
           "height": 36,
           "marginBottom": 5,
-          "padding": 7,
+          "paddingHorizontal": 7,
+          "paddingVertical": 7,
         },
         "normal": Object {
           "borderColor": "#cccccc",
@@ -616,7 +636,8 @@ exports[`LoginForm FORGOT_PASSWORD should display without errors and without val
           "fontSize": 17,
           "height": 36,
           "marginBottom": 5,
-          "padding": 7,
+          "paddingHorizontal": 7,
+          "paddingVertical": 7,
         },
         "notEditable": Object {
           "backgroundColor": "#eeeeee",
@@ -627,7 +648,8 @@ exports[`LoginForm FORGOT_PASSWORD should display without errors and without val
           "fontSize": 17,
           "height": 36,
           "marginBottom": 5,
-          "padding": 7,
+          "paddingHorizontal": 7,
+          "paddingVertical": 7,
         },
       },
       "textboxView": Object {
@@ -652,7 +674,8 @@ exports[`LoginForm FORGOT_PASSWORD should display without errors and without val
     Object {
       "email": "",
     }
-  } />
+  }
+/>
 `;
 
 exports[`LoginForm FORGOT_PASSWORD should not be editable if fetching 1`] = `
@@ -786,6 +809,9 @@ exports[`LoginForm FORGOT_PASSWORD should not be editable if fetching 1`] = `
       "pickerContainer": Object {
         "error": Object {
           "borderColor": "#a94442",
+          "borderRadius": 4,
+          "borderWidth": 1,
+          "marginBottom": 4,
         },
         "normal": Object {
           "borderColor": "#cccccc",
@@ -834,7 +860,8 @@ exports[`LoginForm FORGOT_PASSWORD should not be editable if fetching 1`] = `
           "fontSize": 17,
           "height": 36,
           "marginBottom": 5,
-          "padding": 7,
+          "paddingHorizontal": 7,
+          "paddingVertical": 7,
         },
         "normal": Object {
           "borderColor": "#cccccc",
@@ -844,7 +871,8 @@ exports[`LoginForm FORGOT_PASSWORD should not be editable if fetching 1`] = `
           "fontSize": 17,
           "height": 36,
           "marginBottom": 5,
-          "padding": 7,
+          "paddingHorizontal": 7,
+          "paddingVertical": 7,
         },
         "notEditable": Object {
           "backgroundColor": "#eeeeee",
@@ -855,7 +883,8 @@ exports[`LoginForm FORGOT_PASSWORD should not be editable if fetching 1`] = `
           "fontSize": 17,
           "height": 36,
           "marginBottom": 5,
-          "padding": 7,
+          "paddingHorizontal": 7,
+          "paddingVertical": 7,
         },
       },
       "textboxView": Object {
@@ -881,7 +910,8 @@ exports[`LoginForm FORGOT_PASSWORD should not be editable if fetching 1`] = `
       "password": "password",
       "username": "username",
     }
-  } />
+  }
+/>
 `;
 
 exports[`LoginForm LOGIN password fields are not secured if shown 1`] = `
@@ -1015,6 +1045,9 @@ exports[`LoginForm LOGIN password fields are not secured if shown 1`] = `
       "pickerContainer": Object {
         "error": Object {
           "borderColor": "#a94442",
+          "borderRadius": 4,
+          "borderWidth": 1,
+          "marginBottom": 4,
         },
         "normal": Object {
           "borderColor": "#cccccc",
@@ -1063,7 +1096,8 @@ exports[`LoginForm LOGIN password fields are not secured if shown 1`] = `
           "fontSize": 17,
           "height": 36,
           "marginBottom": 5,
-          "padding": 7,
+          "paddingHorizontal": 7,
+          "paddingVertical": 7,
         },
         "normal": Object {
           "borderColor": "#cccccc",
@@ -1073,7 +1107,8 @@ exports[`LoginForm LOGIN password fields are not secured if shown 1`] = `
           "fontSize": 17,
           "height": 36,
           "marginBottom": 5,
-          "padding": 7,
+          "paddingHorizontal": 7,
+          "paddingVertical": 7,
         },
         "notEditable": Object {
           "backgroundColor": "#eeeeee",
@@ -1084,7 +1119,8 @@ exports[`LoginForm LOGIN password fields are not secured if shown 1`] = `
           "fontSize": 17,
           "height": 36,
           "marginBottom": 5,
-          "padding": 7,
+          "paddingHorizontal": 7,
+          "paddingVertical": 7,
         },
       },
       "textboxView": Object {
@@ -1110,7 +1146,8 @@ exports[`LoginForm LOGIN password fields are not secured if shown 1`] = `
       "password": "password",
       "username": "username",
     }
-  } />
+  }
+/>
 `;
 
 exports[`LoginForm LOGIN should display  errors and  values 1`] = `
@@ -1244,6 +1281,9 @@ exports[`LoginForm LOGIN should display  errors and  values 1`] = `
       "pickerContainer": Object {
         "error": Object {
           "borderColor": "#a94442",
+          "borderRadius": 4,
+          "borderWidth": 1,
+          "marginBottom": 4,
         },
         "normal": Object {
           "borderColor": "#cccccc",
@@ -1292,7 +1332,8 @@ exports[`LoginForm LOGIN should display  errors and  values 1`] = `
           "fontSize": 17,
           "height": 36,
           "marginBottom": 5,
-          "padding": 7,
+          "paddingHorizontal": 7,
+          "paddingVertical": 7,
         },
         "normal": Object {
           "borderColor": "#cccccc",
@@ -1302,7 +1343,8 @@ exports[`LoginForm LOGIN should display  errors and  values 1`] = `
           "fontSize": 17,
           "height": 36,
           "marginBottom": 5,
-          "padding": 7,
+          "paddingHorizontal": 7,
+          "paddingVertical": 7,
         },
         "notEditable": Object {
           "backgroundColor": "#eeeeee",
@@ -1313,7 +1355,8 @@ exports[`LoginForm LOGIN should display  errors and  values 1`] = `
           "fontSize": 17,
           "height": 36,
           "marginBottom": 5,
-          "padding": 7,
+          "paddingHorizontal": 7,
+          "paddingVertical": 7,
         },
       },
       "textboxView": Object {
@@ -1339,7 +1382,8 @@ exports[`LoginForm LOGIN should display  errors and  values 1`] = `
       "password": "password",
       "username": "username",
     }
-  } />
+  }
+/>
 `;
 
 exports[`LoginForm LOGIN should display without errors and without values 1`] = `
@@ -1473,6 +1517,9 @@ exports[`LoginForm LOGIN should display without errors and without values 1`] = 
       "pickerContainer": Object {
         "error": Object {
           "borderColor": "#a94442",
+          "borderRadius": 4,
+          "borderWidth": 1,
+          "marginBottom": 4,
         },
         "normal": Object {
           "borderColor": "#cccccc",
@@ -1521,7 +1568,8 @@ exports[`LoginForm LOGIN should display without errors and without values 1`] = 
           "fontSize": 17,
           "height": 36,
           "marginBottom": 5,
-          "padding": 7,
+          "paddingHorizontal": 7,
+          "paddingVertical": 7,
         },
         "normal": Object {
           "borderColor": "#cccccc",
@@ -1531,7 +1579,8 @@ exports[`LoginForm LOGIN should display without errors and without values 1`] = 
           "fontSize": 17,
           "height": 36,
           "marginBottom": 5,
-          "padding": 7,
+          "paddingHorizontal": 7,
+          "paddingVertical": 7,
         },
         "notEditable": Object {
           "backgroundColor": "#eeeeee",
@@ -1542,7 +1591,8 @@ exports[`LoginForm LOGIN should display without errors and without values 1`] = 
           "fontSize": 17,
           "height": 36,
           "marginBottom": 5,
-          "padding": 7,
+          "paddingHorizontal": 7,
+          "paddingVertical": 7,
         },
       },
       "textboxView": Object {
@@ -1568,7 +1618,8 @@ exports[`LoginForm LOGIN should display without errors and without values 1`] = 
       "password": "",
       "username": "",
     }
-  } />
+  }
+/>
 `;
 
 exports[`LoginForm LOGIN should not be editable if fetching 1`] = `
@@ -1702,6 +1753,9 @@ exports[`LoginForm LOGIN should not be editable if fetching 1`] = `
       "pickerContainer": Object {
         "error": Object {
           "borderColor": "#a94442",
+          "borderRadius": 4,
+          "borderWidth": 1,
+          "marginBottom": 4,
         },
         "normal": Object {
           "borderColor": "#cccccc",
@@ -1750,7 +1804,8 @@ exports[`LoginForm LOGIN should not be editable if fetching 1`] = `
           "fontSize": 17,
           "height": 36,
           "marginBottom": 5,
-          "padding": 7,
+          "paddingHorizontal": 7,
+          "paddingVertical": 7,
         },
         "normal": Object {
           "borderColor": "#cccccc",
@@ -1760,7 +1815,8 @@ exports[`LoginForm LOGIN should not be editable if fetching 1`] = `
           "fontSize": 17,
           "height": 36,
           "marginBottom": 5,
-          "padding": 7,
+          "paddingHorizontal": 7,
+          "paddingVertical": 7,
         },
         "notEditable": Object {
           "backgroundColor": "#eeeeee",
@@ -1771,7 +1827,8 @@ exports[`LoginForm LOGIN should not be editable if fetching 1`] = `
           "fontSize": 17,
           "height": 36,
           "marginBottom": 5,
-          "padding": 7,
+          "paddingHorizontal": 7,
+          "paddingVertical": 7,
         },
       },
       "textboxView": Object {
@@ -1797,7 +1854,8 @@ exports[`LoginForm LOGIN should not be editable if fetching 1`] = `
       "password": "password",
       "username": "username",
     }
-  } />
+  }
+/>
 `;
 
 exports[`LoginForm REGISTER password fields are not secured if shown 1`] = `
@@ -1949,6 +2007,9 @@ exports[`LoginForm REGISTER password fields are not secured if shown 1`] = `
       "pickerContainer": Object {
         "error": Object {
           "borderColor": "#a94442",
+          "borderRadius": 4,
+          "borderWidth": 1,
+          "marginBottom": 4,
         },
         "normal": Object {
           "borderColor": "#cccccc",
@@ -1997,7 +2058,8 @@ exports[`LoginForm REGISTER password fields are not secured if shown 1`] = `
           "fontSize": 17,
           "height": 36,
           "marginBottom": 5,
-          "padding": 7,
+          "paddingHorizontal": 7,
+          "paddingVertical": 7,
         },
         "normal": Object {
           "borderColor": "#cccccc",
@@ -2007,7 +2069,8 @@ exports[`LoginForm REGISTER password fields are not secured if shown 1`] = `
           "fontSize": 17,
           "height": 36,
           "marginBottom": 5,
-          "padding": 7,
+          "paddingHorizontal": 7,
+          "paddingVertical": 7,
         },
         "notEditable": Object {
           "backgroundColor": "#eeeeee",
@@ -2018,7 +2081,8 @@ exports[`LoginForm REGISTER password fields are not secured if shown 1`] = `
           "fontSize": 17,
           "height": 36,
           "marginBottom": 5,
-          "padding": 7,
+          "paddingHorizontal": 7,
+          "paddingVertical": 7,
         },
       },
       "textboxView": Object {
@@ -2046,7 +2110,8 @@ exports[`LoginForm REGISTER password fields are not secured if shown 1`] = `
       "passwordAgain": "passwordagain",
       "username": "username",
     }
-  } />
+  }
+/>
 `;
 
 exports[`LoginForm REGISTER should display  errors and  values 1`] = `
@@ -2198,6 +2263,9 @@ exports[`LoginForm REGISTER should display  errors and  values 1`] = `
       "pickerContainer": Object {
         "error": Object {
           "borderColor": "#a94442",
+          "borderRadius": 4,
+          "borderWidth": 1,
+          "marginBottom": 4,
         },
         "normal": Object {
           "borderColor": "#cccccc",
@@ -2246,7 +2314,8 @@ exports[`LoginForm REGISTER should display  errors and  values 1`] = `
           "fontSize": 17,
           "height": 36,
           "marginBottom": 5,
-          "padding": 7,
+          "paddingHorizontal": 7,
+          "paddingVertical": 7,
         },
         "normal": Object {
           "borderColor": "#cccccc",
@@ -2256,7 +2325,8 @@ exports[`LoginForm REGISTER should display  errors and  values 1`] = `
           "fontSize": 17,
           "height": 36,
           "marginBottom": 5,
-          "padding": 7,
+          "paddingHorizontal": 7,
+          "paddingVertical": 7,
         },
         "notEditable": Object {
           "backgroundColor": "#eeeeee",
@@ -2267,7 +2337,8 @@ exports[`LoginForm REGISTER should display  errors and  values 1`] = `
           "fontSize": 17,
           "height": 36,
           "marginBottom": 5,
-          "padding": 7,
+          "paddingHorizontal": 7,
+          "paddingVertical": 7,
         },
       },
       "textboxView": Object {
@@ -2295,7 +2366,8 @@ exports[`LoginForm REGISTER should display  errors and  values 1`] = `
       "passwordAgain": "passwordagain",
       "username": "username",
     }
-  } />
+  }
+/>
 `;
 
 exports[`LoginForm REGISTER should display without errors and without values 1`] = `
@@ -2447,6 +2519,9 @@ exports[`LoginForm REGISTER should display without errors and without values 1`]
       "pickerContainer": Object {
         "error": Object {
           "borderColor": "#a94442",
+          "borderRadius": 4,
+          "borderWidth": 1,
+          "marginBottom": 4,
         },
         "normal": Object {
           "borderColor": "#cccccc",
@@ -2495,7 +2570,8 @@ exports[`LoginForm REGISTER should display without errors and without values 1`]
           "fontSize": 17,
           "height": 36,
           "marginBottom": 5,
-          "padding": 7,
+          "paddingHorizontal": 7,
+          "paddingVertical": 7,
         },
         "normal": Object {
           "borderColor": "#cccccc",
@@ -2505,7 +2581,8 @@ exports[`LoginForm REGISTER should display without errors and without values 1`]
           "fontSize": 17,
           "height": 36,
           "marginBottom": 5,
-          "padding": 7,
+          "paddingHorizontal": 7,
+          "paddingVertical": 7,
         },
         "notEditable": Object {
           "backgroundColor": "#eeeeee",
@@ -2516,7 +2593,8 @@ exports[`LoginForm REGISTER should display without errors and without values 1`]
           "fontSize": 17,
           "height": 36,
           "marginBottom": 5,
-          "padding": 7,
+          "paddingHorizontal": 7,
+          "paddingVertical": 7,
         },
       },
       "textboxView": Object {
@@ -2544,7 +2622,8 @@ exports[`LoginForm REGISTER should display without errors and without values 1`]
       "passwordAgain": "",
       "username": "",
     }
-  } />
+  }
+/>
 `;
 
 exports[`LoginForm REGISTER should not be editable if fetching 1`] = `
@@ -2696,6 +2775,9 @@ exports[`LoginForm REGISTER should not be editable if fetching 1`] = `
       "pickerContainer": Object {
         "error": Object {
           "borderColor": "#a94442",
+          "borderRadius": 4,
+          "borderWidth": 1,
+          "marginBottom": 4,
         },
         "normal": Object {
           "borderColor": "#cccccc",
@@ -2744,7 +2826,8 @@ exports[`LoginForm REGISTER should not be editable if fetching 1`] = `
           "fontSize": 17,
           "height": 36,
           "marginBottom": 5,
-          "padding": 7,
+          "paddingHorizontal": 7,
+          "paddingVertical": 7,
         },
         "normal": Object {
           "borderColor": "#cccccc",
@@ -2754,7 +2837,8 @@ exports[`LoginForm REGISTER should not be editable if fetching 1`] = `
           "fontSize": 17,
           "height": 36,
           "marginBottom": 5,
-          "padding": 7,
+          "paddingHorizontal": 7,
+          "paddingVertical": 7,
         },
         "notEditable": Object {
           "backgroundColor": "#eeeeee",
@@ -2765,7 +2849,8 @@ exports[`LoginForm REGISTER should not be editable if fetching 1`] = `
           "fontSize": 17,
           "height": 36,
           "marginBottom": 5,
-          "padding": 7,
+          "paddingHorizontal": 7,
+          "paddingVertical": 7,
         },
       },
       "textboxView": Object {
@@ -2793,5 +2878,6 @@ exports[`LoginForm REGISTER should not be editable if fetching 1`] = `
       "passwordAgain": "passwordagain",
       "username": "username",
     }
-  } />
+  }
+/>
 `;

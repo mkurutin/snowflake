@@ -1,6 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
 exports[`ItemCheckbox if disabled and checked, it should display check-square and text 1`] = `
 <View
-  style={undefined}>
+  style={undefined}
+>
   <TouchableWithoutFeedback>
     <View
       style={
@@ -8,15 +11,19 @@ exports[`ItemCheckbox if disabled and checked, it should display check-square an
           "flex": 1,
           "flexDirection": "row",
         }
-      }>
+      }
+    >
       <Icon
         allowFontScaling={false}
         name="check-square"
-        size={20} />
+        size={20}
+      />
       <Text
         accessible={true}
         allowFontScaling={true}
-        ellipsizeMode="tail">
+        disabled={false}
+        ellipsizeMode="tail"
+      >
          
         TextShouldDisplay
       </Text>
@@ -27,7 +34,8 @@ exports[`ItemCheckbox if disabled and checked, it should display check-square an
 
 exports[`ItemCheckbox if disabled and not checked, it should display square-o and text 1`] = `
 <View
-  style={undefined}>
+  style={undefined}
+>
   <TouchableWithoutFeedback>
     <View
       style={
@@ -35,15 +43,19 @@ exports[`ItemCheckbox if disabled and not checked, it should display square-o an
           "flex": 1,
           "flexDirection": "row",
         }
-      }>
+      }
+    >
       <Icon
         allowFontScaling={false}
         name="square-o"
-        size={20} />
+        size={20}
+      />
       <Text
         accessible={true}
         allowFontScaling={true}
-        ellipsizeMode="tail">
+        disabled={false}
+        ellipsizeMode="tail"
+      >
          
         TextShouldDisplay
       </Text>
@@ -54,26 +66,32 @@ exports[`ItemCheckbox if disabled and not checked, it should display square-o an
 
 exports[`ItemCheckbox if not disabled and checked, it should display check-square and text 1`] = `
 <View
-  style={undefined}>
+  style={undefined}
+>
   <TouchableHighlight
     activeOpacity={0.85}
     onPress={[Function]}
-    underlayColor="black">
+    underlayColor="black"
+  >
     <View
       style={
         Object {
           "flex": 1,
           "flexDirection": "row",
         }
-      }>
+      }
+    >
       <Icon
         allowFontScaling={false}
         name="check-square"
-        size={20} />
+        size={20}
+      />
       <Text
         accessible={true}
         allowFontScaling={true}
-        ellipsizeMode="tail">
+        disabled={false}
+        ellipsizeMode="tail"
+      >
          
         TextShouldDisplay
       </Text>
@@ -84,26 +102,32 @@ exports[`ItemCheckbox if not disabled and checked, it should display check-squar
 
 exports[`ItemCheckbox if not disabled and not checked, it should display square-o and text 1`] = `
 <View
-  style={undefined}>
+  style={undefined}
+>
   <TouchableHighlight
     activeOpacity={0.85}
     onPress={[Function]}
-    underlayColor="black">
+    underlayColor="black"
+  >
     <View
       style={
         Object {
           "flex": 1,
           "flexDirection": "row",
         }
-      }>
+      }
+    >
       <Icon
         allowFontScaling={false}
-        name="check-square"
-        size={20} />
+        name="square-o"
+        size={20}
+      />
       <Text
         accessible={true}
         allowFontScaling={true}
-        ellipsizeMode="tail">
+        disabled={false}
+        ellipsizeMode="tail"
+      >
          
         TextShouldDisplay
       </Text>

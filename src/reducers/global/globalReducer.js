@@ -1,15 +1,7 @@
-/**
- * # globalReducer.js
- *
- *
- */
 'use strict'
-/**
- * ## Imports
- * The InitialState for auth
- * fieldValidation for validating the fields
- * formValidation for setting the form's valid flag
- */
+import InitialState from './globalInitialState'
+import Constants from '../../lib/constants'
+
 const {
   SET_SESSION_TOKEN,
 
@@ -24,9 +16,7 @@ const {
   SET_STATE,
   SET_STORE
 
-} = require('../../lib/constants').default
-
-import InitialState from './globalInitialState'
+} = Constants
 
 const initialState = new InitialState()
 /**
@@ -98,14 +88,14 @@ export default function globalReducer (state = initialState, action) {
         newState['device'] = _state.device.toJS()
         newState['profile'] = _state.profile.toJS()
 
-      // Make sure global doesn't have the previous currentState
+        // Make sure global doesn't have the previous currentState
         // let _noCurrentState =  _state.global.set('currentState',null);
         // let _noStore = _noCurrentState.set('store',null);
 
         newState['global'] = _state.global.set('currentState', null).set('store', null).toJS()
 
         return state.set('showState', action.payload)
-        .set('currentState', newState)
+          .set('currentState', newState)
       } else {
         return state.set('showState', action.payload)
       }
@@ -120,10 +110,9 @@ export default function globalReducer (state = initialState, action) {
     case SET_STATE:
       var global = JSON.parse(action.payload).global
       var next = state.set('currentUser', global.currentUser)
-          .set('showState', false)
-          .set('currentState', null)
+        .set('showState', false)
+        .set('currentState', null)
       return next
-
   }
 
   return state

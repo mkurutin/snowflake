@@ -1,71 +1,29 @@
-/**
- * # Subview.js
- *
- *  This is called from main to demonstrate the back button
- *
- */
 'use strict'
-/*
- * ## Imports
- *
- * Imports from redux
- */
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 
-/**
- * Router
- */
-import {Actions} from 'react-native-router-flux'
-
-/**
- * Navigation Bar
- */
+import { Actions } from 'react-native-router-flux'
 import NavigationBar from 'react-native-navbar'
 
-/**
- * The necessary components from React
- */
 import React from 'react'
-import
-{
-  StyleSheet,
-  View,
-  Text
-}
-from 'react-native'
+import { StyleSheet, Text, View } from 'react-native'
 
-/**
- * Use device options so we can reference the Version
- *
- */
 import * as deviceActions from '../reducers/device/deviceActions'
+import I18n from '../lib/I18n'
 
-/**
-* ## Redux boilerplate
-*/
-
-/**
- *  Instead of including all app states via ...state
- *  You probably want to explicitly enumerate only those which Main.js will depend on.
- *
- */
 function mapStateToProps (state) {
   return {
     deviceVersion: state.device.version
   }
 }
 
-/*
- * Bind all the actions in deviceActions
- */
 function mapDispatchToProps (dispatch) {
   return {
     actions: bindActionCreators(deviceActions, dispatch)
   }
 }
 
-var styles = StyleSheet.create({
+const styles = StyleSheet.create({
   container: {
     borderTopWidth: 2,
     borderBottomWidth: 2,
@@ -78,43 +36,28 @@ var styles = StyleSheet.create({
     fontWeight: 'bold'
   }
 })
-/**
- * ### Translations
- */
-var I18n = require('react-native-i18n')
-import Translations from '../lib/Translations'
-I18n.translations = Translations
 
-/**
- * ## Subview class
- */
-let Subview = React.createClass({
-
-  render () {
-    var titleConfig = {
-      title: I18n.t('Subview.subview')
-    }
-
-    var leftButtonConfig = {
-      title: I18n.t('Subview.back'),
-      handler: Actions.pop
-    }
-
-    return (
-      <View>
-        <NavigationBar
-          title={titleConfig}
-          leftButton={leftButtonConfig} />
-        <View style={styles.container}>
-          <Text style={styles.summary}>{I18n.t('Subview.subview')} {I18n.t('App.version')}: {this.props.deviceVersion}
-          </Text>
-        </View>
-      </View>
-    )
+function Subview (props) {
+  const titleConfig = {
+    title: I18n.t('Subview.subview')
   }
-})
 
-/**
- * Connect the properties
- */
+  const leftButtonConfig = {
+    title: I18n.t('Subview.back'),
+    handler: Actions.pop
+  }
+
+  return (
+    <View>
+      <NavigationBar
+        title={titleConfig}
+        leftButton={leftButtonConfig}/>
+      <View style={styles.container}>
+        <Text style={styles.summary}>{I18n.t('Subview.subview')} {I18n.t('App.version')}: {props.deviceVersion}
+        </Text>
+      </View>
+    </View>
+  )
+}
+
 export default connect(mapStateToProps, mapDispatchToProps)(Subview)

@@ -1,3 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
 exports[`Header should be display empty text when not fetching 1`] = `
 <View>
   <View
@@ -8,11 +10,13 @@ exports[`Header should be display empty text when not fetching 1`] = `
         "justifyContent": "center",
         "marginTop": 20,
       }
-    }>
+    }
+  >
     <TouchableHighlight
       activeOpacity={0.85}
       onPress={[Function]}
-      underlayColor="black">
+      underlayColor="black"
+    >
       <Image
         source={1}
         style={
@@ -20,7 +24,8 @@ exports[`Header should be display empty text when not fetching 1`] = `
             "height": 100,
             "width": 100,
           }
-        } />
+        }
+      />
     </TouchableHighlight>
   </View>
 </View>
@@ -36,11 +41,13 @@ exports[`Header should be display spinner when fetching 1`] = `
         "justifyContent": "center",
         "marginTop": 20,
       }
-    }>
+    }
+  >
     <TouchableHighlight
       activeOpacity={0.85}
       onPress={[Function]}
-      underlayColor="black">
+      underlayColor="black"
+    >
       <Image
         source={1}
         style={
@@ -48,11 +55,13 @@ exports[`Header should be display spinner when fetching 1`] = `
             "height": 100,
             "width": 100,
           }
-        } />
+        }
+      />
     </TouchableHighlight>
     <ActivityIndicator
       animating={true}
-      size="large" />
+      size="large"
+    />
   </View>
 </View>
 `;

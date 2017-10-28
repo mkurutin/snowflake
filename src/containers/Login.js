@@ -1,42 +1,20 @@
-/**
- * # Login.js
- *
- *  The container to display the Login form
- *
- */
 'use strict'
-/**
- * ## Imports
- *
- * Redux
- */
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 
-/**
- * The actions we need
- */
 import * as authActions from '../reducers/auth/authActions'
 
-/**
- *   LoginRender
- */
 import LoginRender from '../components/LoginRender'
 
-/**
- * The necessary React components
- */
 import React from 'react'
+import I18n from '../lib/I18n'
 
+import Constants from '../lib/constants'
 const {
   LOGIN,
   REGISTER,
   FORGOT_PASSWORD
-} = require('../lib/constants').default
-
-/**
- * ## Redux boilerplate
- */
+} = Constants
 
 function mapStateToProps (state) {
   return {
@@ -55,36 +33,26 @@ function buttonPressHandler (login, username, password) {
   login(username, password)
 }
 
-/**
- * ### Translations
- */
-var I18n = require('react-native-i18n')
-import Translations from '../lib/Translations'
-I18n.translations = Translations
+function Login (props) {
+  const loginButtonText = I18n.t('Login.login')
+  const onButtonPress = buttonPressHandler.bind(null,
+    props.actions.login,
+    props.auth.form.fields.username,
+    props.auth.form.fields.password
+  )
 
-let Login = React.createClass({
-
-  render () {
-    let loginButtonText = I18n.t('Login.login')
-    let onButtonPress = buttonPressHandler.bind(null,
-                                                this.props.actions.login,
-                                                this.props.auth.form.fields.username,
-                                                this.props.auth.form.fields.password
-                                               )
-
-    return (
-      <LoginRender
-        formType={LOGIN}
-        loginButtonText={loginButtonText}
-        onButtonPress={onButtonPress}
-        displayPasswordCheckbox
-        leftMessageType={REGISTER}
-        rightMessageType={FORGOT_PASSWORD}
-        auth={this.props.auth}
-        global={this.props.global}
-      />
-    )
-  }
-})
+  return (
+    <LoginRender
+      formType={LOGIN}
+      loginButtonText={loginButtonText}
+      onButtonPress={onButtonPress}
+      displayPasswordCheckbox
+      leftMessageType={REGISTER}
+      rightMessageType={FORGOT_PASSWORD}
+      auth={props.auth}
+      global={props.global}
+    />
+  )
+}
 
 export default connect(mapStateToProps, mapDispatchToProps)(Login)

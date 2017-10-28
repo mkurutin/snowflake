@@ -1,3 +1,4 @@
+/* eslint-disable import/first */
 /**
  * # authActions-test.js
  *
@@ -109,7 +110,7 @@ describe('authActions', () => {
     let error = {error: 'test error'}
     expect(actions.logoutFailure(error)).toEqual({type:
                                                   LOGOUT_FAILURE,
-                                                  payload: error})
+    payload: error})
   })
 
   it('should set signupRequest', () => {
@@ -140,7 +141,7 @@ describe('authActions', () => {
     let error = {error: 'thisistheerror'}
     expect(actions.signupFailure(error)).toEqual({type:
                                                   SIGNUP_FAILURE,
-                                                  payload: error})
+    payload: error})
   })
 
   it('should set loginRequest', () => {
@@ -154,7 +155,7 @@ describe('authActions', () => {
   it('should set loginFailure', () => {
     let error = {error: 'thisistheerror'}
     expect(actions.loginFailure(error)).toEqual({type: LOGIN_FAILURE,
-                                                 payload: error})
+      payload: error})
   })
 
   it('should set resetPasswordRequest', () => {
@@ -169,7 +170,7 @@ describe('authActions', () => {
     let error = {error: 'thisistheerror'}
     expect(actions.resetPasswordFailure(error)).toEqual({type:
                                                          RESET_PASSWORD_FAILURE,
-                                                         payload: error})
+    payload: error})
   })
 
   it('should set onAuthFormFieldChange', () => {
@@ -225,8 +226,8 @@ describe('authActions', () => {
   it('should getSessionToken', () => {
     const expectedActions = [
       {type: SESSION_TOKEN_REQUEST},
-        {type: SESSION_TOKEN_SUCCESS,
-         payload: {sessionToken:
+      {type: SESSION_TOKEN_SUCCESS,
+        payload: {sessionToken:
                    {sessionToken: 'token'}}},
       {type: LOGOUT}
     ]
@@ -244,10 +245,10 @@ describe('authActions', () => {
   it('should signup', () => {
     const expectedActions = [
       {type: SIGNUP_REQUEST},
-        {type: SIGNUP_SUCCESS,
-         payload: {status: 201,
-                   username: 'user',
-                   email: 'email'}},
+      {type: SIGNUP_SUCCESS,
+        payload: {status: 201,
+          username: 'user',
+          email: 'email'}},
       {type: LOGOUT}
     ]
 

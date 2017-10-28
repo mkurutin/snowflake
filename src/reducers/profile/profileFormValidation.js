@@ -21,10 +21,9 @@ export default function formValidation (state) {
         !state.form.fields.emailHasError &&
         (state.form.fields.username !== state.form.originalProfile.username ||
          state.form.fields.email !== state.form.originalProfile.email)
-       ) {
+  ) {
     return state.setIn(['form', 'isValid'], true)
   } else {
     return state.setIn(['form', 'isValid'], false)
   }
 }
-

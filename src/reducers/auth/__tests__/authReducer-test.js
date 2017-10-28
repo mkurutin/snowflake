@@ -153,9 +153,9 @@ describe('authReducer', () => {
       let init = authReducer(initialState, action)
       let withFields =
             init.setIn(['form', 'fields', 'username'], 'dummy')
-            .setIn(['form', 'fields', 'email'], 'notvalid')
-            .setIn(['form', 'fields', 'password'], 'foo')
-            .setIn(['form', 'fields', 'passwordAgain'], 'foo')
+              .setIn(['form', 'fields', 'email'], 'notvalid')
+              .setIn(['form', 'fields', 'password'], 'foo')
+              .setIn(['form', 'fields', 'passwordAgain'], 'foo')
       let next = authReducer(withFields, action)
       expect(next.form.state).toBe(LOGOUT)
       expect(next.form.isValid).toBe(true)
@@ -210,13 +210,13 @@ describe('authReducer', () => {
         payload: {field: 'email', value: 'bar@ton.com'}
       }
       let emailState = authReducer(initialState,
-                                   emailFieldChangeAction)
+        emailFieldChangeAction)
 
       const action = {
         type: FORGOT_PASSWORD
       }
       let next = authReducer(emailState,
-                             action)
+        action)
       expect(next.form.state).toBe(FORGOT_PASSWORD)
       expect(next.form.isValid).toBe(true)
     })
@@ -233,13 +233,13 @@ describe('authReducer', () => {
         payload: {field: 'email', value: 'bar@ton'}
       }
       let emailState = authReducer(initialState,
-                                   emailFieldChangeAction)
+        emailFieldChangeAction)
 
       const action = {
         type: FORGOT_PASSWORD
       }
       let next = authReducer(emailState,
-                             action)
+        action)
       expect(next.form.state).toBe(FORGOT_PASSWORD)
       expect(next.form.isValid).toBe(false)
     })
@@ -290,9 +290,9 @@ describe('authReducer', () => {
       }
 
       let userNameState = authReducer(initialState,
-                                      userNameFieldChangeAction)
+        userNameFieldChangeAction)
       let passwordState = authReducer(userNameState,
-                                      passwordFieldChangeAction)
+        passwordFieldChangeAction)
 
       const action = {
         type: LOGIN
@@ -321,9 +321,9 @@ describe('authReducer', () => {
       }
 
       let userNameState = authReducer(initialState,
-                                      userNameFieldChangeAction)
+        userNameFieldChangeAction)
       let passwordState = authReducer(userNameState,
-                                      passwordFieldChangeAction)
+        passwordFieldChangeAction)
 
       const action = {
         type: LOGIN
@@ -393,13 +393,13 @@ describe('authReducer', () => {
       }
 
       let userNameState = authReducer(initialState,
-                                      userNameFieldChangeAction)
+        userNameFieldChangeAction)
       let emailState = authReducer(userNameState,
-                                   emailFieldChangeAction)
+        emailFieldChangeAction)
       let passwordState = authReducer(emailState,
-                                      passwordFieldChangeAction)
+        passwordFieldChangeAction)
       let passwordAgainState = authReducer(passwordState,
-                                           passwordAgainFieldChangeAction)
+        passwordAgainFieldChangeAction)
 
       const action = {
         type: REGISTER
@@ -437,13 +437,13 @@ describe('authReducer', () => {
       }
 
       let userNameState = authReducer(initialState,
-                                      userNameFieldChangeAction)
+        userNameFieldChangeAction)
       let emailState = authReducer(userNameState,
-                                   emailFieldChangeAction)
+        emailFieldChangeAction)
       let passwordState = authReducer(emailState,
-                                      passwordFieldChangeAction)
+        passwordFieldChangeAction)
       let passwordAgainState = authReducer(passwordState,
-                                           passwordAgainFieldChangeAction)
+        passwordAgainFieldChangeAction)
 
       const action = {
         type: REGISTER

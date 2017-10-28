@@ -7,62 +7,27 @@
  *
  */
 'use strict'
-/**
- * ## Import
- *
- * React
- */
-import React, {PropTypes} from 'react'
+import React from 'react'
+import PropTypes from 'prop-types'
 
-/**
- * States of login display
- */
+import Constants from '../lib/constants'
+import t from 'tcomb-form-native'
+import I18n from '../lib/I18n'
+
 const {
   REGISTER,
   LOGIN,
   FORGOT_PASSWORD
-} = require('../lib/constants').default
+} = Constants
 
-/**
- *  The fantastic little form library
- */
-const t = require('tcomb-form-native')
-let Form = t.form.Form
+const Form = t.form.Form
 
-/**
- * ### Translations
- */
-var I18n = require('react-native-i18n')
-import Translations from '../lib/Translations'
-I18n.translations = Translations
-
-var LoginForm = React.createClass({
-  /**
-   * ## LoginForm class
-   *
-   * * form: the properties to set into the UI form
-   * * value: the values to set in the input fields
-   * * onChange: function to call when user enters text
-   */
-  propTypes: {
-    formType: PropTypes.string,
-    form: PropTypes.object,
-    value: PropTypes.object,
-    onChange: PropTypes.func
-  },
-
-  /**
-   * ## render
-   *
-   * setup all the fields using the props and default messages
-   *
-   */
+export default class LoginForm extends React.Component {
   render () {
     let formType = this.props.formType
 
     let options = {
-      fields: {
-      }
+      fields: {}
     }
 
     let username = {
@@ -103,10 +68,6 @@ var LoginForm = React.createClass({
 
     let loginForm
     switch (formType) {
-      /**
-       * ### Registration
-       * The registration form has 4 fields
-       */
       case (REGISTER):
         loginForm = t.struct({
           username: t.String,
@@ -126,10 +87,6 @@ var LoginForm = React.createClass({
         options.fields['passwordAgain'].placeholder = I18n.t('LoginForm.password_again')
         break
 
-      /**
-       * ### Login
-       * The login form has only 2 fields
-       */
       case (LOGIN):
         loginForm = t.struct({
           username: t.String,
@@ -142,10 +99,6 @@ var LoginForm = React.createClass({
         options.fields['password'].placeholder = I18n.t('LoginForm.password')
         break
 
-      /**
-       * ### Reset password
-       * The password reset form has only 1 field
-       */
       case (FORGOT_PASSWORD):
         loginForm = t.struct({
           email: t.String
@@ -154,22 +107,27 @@ var LoginForm = React.createClass({
         options.fields['email'].autoCapitalize = 'none'
         options.fields['email'].placeholder = I18n.t('LoginForm.email')
         break
-    } // switch
+    }
 
-    /**
-     * ### Return
-     * returns the Form component with the correct structures
-     */
     return (
-      <Form ref='form'
+      <Form
         type={loginForm}
         options={options}
         value={this.props.value}
         onChange={this.props.onChange}
       />
-
     )
   }
-})
+}
 
-module.exports = LoginForm
+/**
+ * * form: the properties to set into the UI form
+ * * value: the values to set in the input fields
+ * * onChange: function to call when user enters text
+ */
+LoginForm.propTypes = {
+  formType: PropTypes.string,
+  form: PropTypes.object,
+  value: PropTypes.object,
+  onChange: PropTypes.func
+}

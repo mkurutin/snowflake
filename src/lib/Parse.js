@@ -32,8 +32,8 @@ export class Parse extends Backend {
 
     this._applicationId = CONFIG.PARSE.appId
     this.API_BASE_URL = CONFIG.backend.parseLocal
-    ? CONFIG.PARSE.local.url
-    : CONFIG.PARSE.remote.url
+      ? CONFIG.PARSE.local.url
+      : CONFIG.PARSE.remote.url
   }
   /**
    * ### signup
@@ -50,7 +50,7 @@ export class Parse extends Backend {
    * if error, {code: xxx, error: 'message'}
    */
   async signup (data) {
-    return await this._fetch({
+    return this._fetch({
       method: 'POST',
       url: '/users',
       body: data
@@ -95,7 +95,7 @@ export class Parse extends Backend {
     }
     formBody = formBody.join('&')
 
-    return await this._fetch({
+    return this._fetch({
       method: 'GET',
       url: '/login?' + formBody
     })
@@ -117,7 +117,7 @@ export class Parse extends Backend {
    * prepare the request and call _fetch
    */
   async logout () {
-    return await this._fetch({
+    return this._fetch({
       method: 'POST',
       url: '/logout',
       body: {}
@@ -148,7 +148,7 @@ export class Parse extends Backend {
    * if error:  {code: xxx, error: 'message'}
    */
   async resetPassword (data) {
-    return await this._fetch({
+    return this._fetch({
       method: 'POST',
       url: '/requestPasswordReset',
       body: data
@@ -184,19 +184,19 @@ export class Parse extends Backend {
    * if error, {code: xxx, error: 'message'}
    */
   async getProfile () {
-    return await this._fetch({
+    return this._fetch({
       method: 'GET',
       url: '/users/me'
     })
-     .then((response) => {
-       return response.json().then(function (res) {
-         if ((response.status === 200 || response.status === 201)) {
-           return res
-         } else {
-           throw (res)
-         }
-       })
-     })
+      .then((response) => {
+        return response.json().then(function (res) {
+          if ((response.status === 200 || response.status === 201)) {
+            return res
+          } else {
+            throw (res)
+          }
+        })
+      })
       .catch((error) => {
         throw (error)
       })
@@ -211,7 +211,7 @@ export class Parse extends Backend {
    * {username: "barton", email: "barton@foo.com"}
    */
   async updateProfile (userId, data) {
-    return await this._fetch({
+    return this._fetch({
       method: 'PUT',
       url: '/users/' + userId,
       body: data
@@ -265,7 +265,7 @@ export class Parse extends Backend {
       reqOpts.body = JSON.stringify(opts.body)
     }
 
-    return await fetch(this.API_BASE_URL + opts.url, reqOpts)
+    return fetch(this.API_BASE_URL + opts.url, reqOpts)
   }
 }
 // The singleton variable

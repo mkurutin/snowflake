@@ -1,3 +1,4 @@
+/* eslint-disable import/first */
 /**
  * # Header-test.js
  *
@@ -19,8 +20,7 @@ import React from 'react'
 
 import Header from '../Header'
 
-import ReactTestUtils from 'react-addons-test-utils'
-const renderer = ReactTestUtils.createRenderer()
+import ShallowRenderer from 'react-test-renderer/shallow'
 
 /**
  * ## Test
@@ -34,6 +34,7 @@ describe('Header', () => {
     const props = {
       isFetching: false
     }
+    const renderer = new ShallowRenderer()
     renderer.render(<Header {...props} />)
     const tree = renderer.getRenderOutput()
     expect(tree).toMatchSnapshot()
@@ -46,6 +47,7 @@ describe('Header', () => {
     const props = {
       isFetching: true
     }
+    const renderer = new ShallowRenderer()
     renderer.render(<Header {...props} />)
     const tree = renderer.getRenderOutput()
     expect(tree).toMatchSnapshot()

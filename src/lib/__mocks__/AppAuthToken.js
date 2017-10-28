@@ -18,24 +18,26 @@ export class AppAuthToken {
    * @returns {Object} sessionToken
    */
   async getSessionToken () {
-    return await {
+    return {
       sessionToken: {
         sessionToken: 'token'
       }
     }
   }
+
   /**
    * ### storeSessionToken
    * @returns {Object} empty
    */
   async storeSessionToken () {
-    return await {}
+    return {}
   }
+
   /**
    * ### deleteSessionToken
    */
   async deleteSessionToken () {
-    return await {}
+    return {}
   }
 }
 export let appAuthToken = new AppAuthToken()

@@ -12,13 +12,11 @@
  */
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
-
 /**
  * The actions we need
  */
 import * as authActions from '../reducers/auth/authActions'
 import * as globalActions from '../reducers/global/globalActions'
-
 /**
  * The Header will display a Image and support Hot Loading
  */
@@ -27,17 +25,13 @@ import Header from '../components/Header'
  * The FormButton will change it's text between the 4 states as necessary
  */
 import FormButton from '../components/FormButton'
-
 /**
  * The necessary React components
  */
-import React, {Component} from 'react'
-import
-{
-  StyleSheet,
-  View
-}
-from 'react-native'
+import React, { Component } from 'react'
+import { StyleSheet, View } from 'react-native'
+
+import I18n from '../lib/I18n'
 
 /**
  * ## Styles
@@ -69,18 +63,11 @@ function mapStateToProps (state) {
 
 function mapDispatchToProps (dispatch) {
   return {
-    actions: bindActionCreators({ ...authActions, ...globalActions }, dispatch)
+    actions: bindActionCreators({...authActions, ...globalActions}, dispatch)
   }
 }
-/**
- * ### Translations
- */
-var I18n = require('react-native-i18n')
-import Translations from '../lib/Translations'
-I18n.translations = Translations
 
 class Logout extends Component {
-
   /**
    * ### render
    * Setup some default presentations and render
@@ -95,19 +82,17 @@ class Logout extends Component {
     return (
       <View style={styles.container}>
         <View>
-          <Header isFetching={this.props.auth.form.isFetching}
-            showState={this.props.global.showState}
-            currentState={this.props.global.currentState}
-            onGetState={this.props.actions.getState}
-            onSetState={this.props.actions.setState} />
+          <Header isFetching={this.props.auth.form.isFetching} showState={this.props.global.showState}
+            currentState={this.props.global.currentState} onGetState={this.props.actions.getState}
+            onSetState={this.props.actions.setState}/>
 
           <FormButton
             isDisabled={!this.props.auth.form.isValid || this.props.auth.form.isFetching}
             onPress={onButtonPress.bind(self)}
-            buttonText={I18n.t('Snowflake.logout')} />
+            buttonText={I18n.t('Snowflake.logout')}/>
         </View>
       </View>
-      )
+    )
   }
 }
 export default connect(mapStateToProps, mapDispatchToProps)(Logout)

@@ -17,8 +17,7 @@ import React from 'react'
 
 import FormButton from '../FormButton'
 
-import ReactTestUtils from 'react-addons-test-utils'
-const renderer = ReactTestUtils.createRenderer()
+import ShallowRenderer from 'react-test-renderer/shallow'
 
 it('FormButton', () => {
   const props = {
@@ -26,6 +25,7 @@ it('FormButton', () => {
     onPress: () => {},
     buttonText: 'TestString'
   }
+  const renderer = new ShallowRenderer()
   renderer.render(<FormButton {...props} />)
   const tree = renderer.getRenderOutput()
   expect(tree).toMatchSnapshot()

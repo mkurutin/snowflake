@@ -177,9 +177,9 @@ describe('profileReducer', () => {
         payload: {field: 'email', value: 'barton@gmail.com'}
       }
       let firstState = profileReducer(undefined,
-                                usernameAction)
+        usernameAction)
       let next = profileReducer(firstState,
-                                emailAction)
+        emailAction)
 
       expect(next.form.isValid).toBe(true) //
       expect(next.form.fields.username).toEqual(usernameAction.payload.value)
@@ -203,7 +203,7 @@ describe('profileReducer', () => {
         payload: {field: 'email', value: 'bart'}
       }
       let firstState = profileReducer(undefined,
-                                usernameAction)
+        usernameAction)
 
       let next = profileReducer(firstState, emailAction)
 

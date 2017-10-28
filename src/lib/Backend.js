@@ -29,7 +29,7 @@ export default class Backend {
   signup (data) {
 
   }
- /**
+  /**
    * ### login
    * encode the data and and call _fetch
    *
@@ -101,6 +101,4 @@ export default class Backend {
    */
   updateProfile (userId, data) {
   }
-
 }
-

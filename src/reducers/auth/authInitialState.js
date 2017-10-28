@@ -53,4 +53,3 @@ var InitialState = Record({
   form: new Form()
 })
 export default InitialState
-

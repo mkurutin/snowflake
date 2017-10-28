@@ -7,58 +7,30 @@
  * ```App``` and ```Login```
  */
 'use strict'
-/**
-* ## Imports
-*
-* Redux
-*/
+
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 
-/**
- * The actions we need
- */
 import * as profileActions from '../reducers/profile/profileActions'
 import * as globalActions from '../reducers/global/globalActions'
 
-/**
- * The ErrorAlert will display any and all errors
- */
 import ErrorAlert from '../components/ErrorAlert'
-/**
- * The FormButton will respond to the press
- */
+
 import FormButton from '../components/FormButton'
-/**
- * The Header will display a Image and support Hot Loading
- */
+
 import Header from '../components/Header'
 
-/**
- * The itemCheckbox will display the state of the email verified
- */
 import ItemCheckbox from '../components/ItemCheckbox'
-/**
- * The necessary React components
- */
-import React, {Component} from 'react'
-import
-{
-  StyleSheet,
-  View
-}
-from 'react-native'
 
-/**
-* The form processing component
-*/
+import React, { Component } from 'react'
+import { StyleSheet, View } from 'react-native'
+
+import I18n from '../lib/I18n'
+
 import t from 'tcomb-form-native'
 
 let Form = t.form.Form
 
-/**
- * ## Styles
- */
 var styles = StyleSheet.create({
   container: {
     flexDirection: 'column',
@@ -93,18 +65,8 @@ function mapDispatchToProps (dispatch) {
     actions: bindActionCreators({ ...profileActions, ...globalActions }, dispatch)
   }
 }
-/**
- * ### Translations
- */
-var I18n = require('react-native-i18n')
-import Translations from '../lib/Translations'
-I18n.translations = Translations
 
 class Profile extends Component {
-  /**
-   * ## Profile class
-   * Set the initial state and prepare the errorAlert
-   */
   constructor (props) {
     super(props)
     this.errorAlert = new ErrorAlert()
@@ -234,7 +196,6 @@ class Profile extends Component {
         />
         <View style={styles.inputs}>
           <Form
-            ref='form'
             type={ProfileForm}
             options={options}
             value={this.state.formValues}

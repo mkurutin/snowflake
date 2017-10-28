@@ -68,7 +68,6 @@ export default function formValidation (state) {
       } else {
         return state.setIn(['form', 'isValid'], false)
       }
-
   }
   /**
    * Default, return the state

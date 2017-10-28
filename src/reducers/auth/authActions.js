@@ -9,11 +9,13 @@
  */
 'use strict'
 
-/**
- * ## Imports
- *
- * The actions supported
- */
+import _ from 'underscore'
+
+import { Actions } from 'react-native-router-flux'
+import { appAuthToken } from '../../lib/AppAuthToken'
+import BackendFactory from '../../lib/BackendFactory'
+import Constants from '../../lib/constants'
+
 const {
   SESSION_TOKEN_REQUEST,
   SESSION_TOKEN_SUCCESS,
@@ -44,19 +46,7 @@ const {
   RESET_PASSWORD_SUCCESS,
   RESET_PASSWORD_FAILURE
 
-} = require('../../lib/constants').default
-
-/**
- * Project requirements
- */
-const BackendFactory = require('../../lib/BackendFactory').default
-
-import {Actions} from 'react-native-router-flux'
-
-import {appAuthToken} from '../../lib/AppAuthToken'
-
-const _ = require('underscore')
-
+} = Constants
 /**
  * ## State actions
  * controls which form is displayed to the user
@@ -286,16 +276,18 @@ export function signup (username, email, password) {
       .then((json) => {
         return saveSessionToken(
           Object.assign({}, json,
-            { username: username,
+            {
+              username: username,
               email: email
             })
-          )
+        )
           .then(() => {
             dispatch(signupSuccess(
               Object.assign({}, json,
-               { username: username,
-                 email: email
-               })
+                {
+                  username: username,
+                  email: email
+                })
             ))
             dispatch(logoutState())
             // navigate to Tabbar

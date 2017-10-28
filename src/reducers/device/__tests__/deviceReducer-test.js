@@ -91,4 +91,3 @@ describe('deviceReducer', () => {
     })
   })
 })// deviceReducer
-

@@ -1,81 +1,32 @@
-/**
- * # Login.js
- *
- * This class is a little complicated as it handles multiple states.
- *
- */
 'use strict'
-/**
- * ## Imports
- *
- * Redux
- */
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 
-/**
- * The actions we need
- */
 import * as authActions from '../reducers/auth/authActions'
 import * as globalActions from '../reducers/global/globalActions'
 
-/**
- * Router actions
- */
 import { Actions } from 'react-native-router-flux'
 
-/**
- * The Header will display a Image and support Hot Loading
- */
 import Header from '../components/Header'
-/**
- * The ErrorAlert displays an alert for both ios & android
- */
 import ErrorAlert from '../components/ErrorAlert'
-/**
- * The FormButton will change it's text between the 4 states as necessary
- */
 import FormButton from '../components/FormButton'
-/**
- *  The LoginForm does the heavy lifting of displaying the fields for
- * textinput and displays the error messages
- */
 import LoginForm from '../components/LoginForm'
-/**
- * The itemCheckbox will toggle the display of the password fields
- */
 import ItemCheckbox from '../components/ItemCheckbox'
 
-/**
- * The necessary React components
- */
-import React, {Component} from 'react'
-import
-{
-  StyleSheet,
-  ScrollView,
-  Text,
-  TouchableHighlight,
-  View
-}
-from 'react-native'
+import React, { Component } from 'react'
+import { ScrollView, StyleSheet, Text, TouchableHighlight, View } from 'react-native'
 
 import Dimensions from 'Dimensions'
-var {height, width} = Dimensions.get('window') // Screen dimensions in current orientation
-
-/**
- * The states were interested in
- */
+import Constants from '../lib/constants'
+import I18n from '../lib/I18n'
+const {height, width} = Dimensions.get('window') // Screen dimensions in current orientation
 const {
   LOGIN,
   REGISTER,
   FORGOT_PASSWORD
-} = require('../lib/constants').default
+} = Constants
 
-/**
- * ## Styles
- */
-var styles = StyleSheet.create({
+const styles = StyleSheet.create({
   container: {
     flexDirection: 'column',
     flex: 1
@@ -94,21 +45,12 @@ var styles = StyleSheet.create({
     marginRight: 10
   }
 })
-/**
- * ## Redux boilerplate
- */
 
 function mapDispatchToProps (dispatch) {
   return {
-    actions: bindActionCreators({ ...authActions, ...globalActions }, dispatch)
+    actions: bindActionCreators({...authActions, ...globalActions}, dispatch)
   }
 }
-/**
- * ### Translations
- */
-var I18n = require('react-native-i18n')
-import Translations from '../lib/Translations'
-I18n.translations = Translations
 
 class LoginRender extends Component {
   constructor (props) {
@@ -124,10 +66,6 @@ class LoginRender extends Component {
     }
   }
 
-  /**
-   * ### componentWillReceiveProps
-   * As the properties are validated they will be set here.
-   */
   componentWillReceiveProps (nextprops) {
     this.setState({
       value: {
@@ -165,18 +103,19 @@ class LoginRender extends Component {
       {value}
     )
   }
+
   /**
-  *  Get the appropriate message for the current action
-  *  @param messageType FORGOT_PASSWORD, or LOGIN, or REGISTER
-  *  @param actions the action for the message type
-  */
+   *  Get the appropriate message for the current action
+   *  @param messageType FORGOT_PASSWORD, or LOGIN, or REGISTER
+   *  @param actions the action for the message type
+   */
   getMessage (messageType, actions) {
     let forgotPassword =
       <TouchableHighlight
         onPress={() => {
           actions.forgotPasswordState()
           Actions.ForgotPassword()
-        }} >
+        }}>
         <Text>{I18n.t('LoginRender.forgot_password')}</Text>
       </TouchableHighlight>
 
@@ -185,7 +124,7 @@ class LoginRender extends Component {
         onPress={() => {
           actions.loginState()
           Actions.Login()
-        }} >
+        }}>
         <Text>{I18n.t('LoginRender.already_have_account')}</Text>
       </TouchableHighlight>
 
@@ -194,7 +133,7 @@ class LoginRender extends Component {
         onPress={() => {
           actions.registerState()
           Actions.Register()
-        }} >
+        }}>
         <Text>{I18n.t('LoginRender.register')}</Text>
       </TouchableHighlight>
 
@@ -208,10 +147,6 @@ class LoginRender extends Component {
     }
   }
 
-  /**
-   * ### render
-   * Setup some default presentations and render
-   */
   render () {
     var formType = this.props.formType
     var loginButtonText = this.props.loginButtonText
@@ -243,7 +178,7 @@ class LoginRender extends Component {
           onUncheck={() => {
             this.props.actions.onAuthFormFieldChange('showPassword', false)
           }}
-      />
+        />
     }
 
     /**
@@ -262,21 +197,21 @@ class LoginRender extends Component {
               showState={this.props.global.showState}
               currentState={this.props.global.currentState}
               onGetState={this.props.actions.getState}
-              onSetState={this.props.actions.setState} />
+              onSetState={this.props.actions.setState}/>
 
             <View style={styles.inputs}>
               <LoginForm
                 formType={formType}
                 form={this.props.auth.form}
                 value={this.state.value}
-                onChange={self.onChange.bind(self)} />
+                onChange={self.onChange.bind(self)}/>
               {passwordCheckbox}
             </View>
 
             <FormButton
               isDisabled={!this.props.auth.form.isValid || this.props.auth.form.isFetching}
               onPress={onButtonPress}
-              buttonText={loginButtonText} />
+              buttonText={loginButtonText}/>
 
             <View >
               <View style={styles.forgotContainer}>

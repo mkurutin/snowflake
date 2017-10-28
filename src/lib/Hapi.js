@@ -7,7 +7,6 @@
  * Singleton module see: https://k94n.com/es6-modules-single-instance-pattern
  */
 'use strict'
-
 /**
  * ## Imports
  *
@@ -32,9 +31,10 @@ export class Hapi extends Backend {
       _.isNull(token) ? null : token.sessionToken.sessionToken
 
     this.API_BASE_URL = CONFIG.backend.hapiLocal
-          ? CONFIG.HAPI.local.url
-          : CONFIG.HAPI.remote.url
+      ? CONFIG.HAPI.local.url
+      : CONFIG.HAPI.remote.url
   }
+
   /**
    * ### signup
    *
@@ -50,7 +50,7 @@ export class Hapi extends Backend {
    * if error, {code: xxx, error: 'message'}
    */
   async signup (data) {
-    return await this._fetch({
+    return this._fetch({
       method: 'POST',
       url: '/account/register',
       body: data
@@ -66,6 +66,7 @@ export class Hapi extends Backend {
         throw (error)
       })
   }
+
   /**
    * ### login
    * encode the data and and call _fetch
@@ -85,7 +86,7 @@ export class Hapi extends Backend {
    *
    */
   async login (data) {
-    return await this._fetch({
+    return this._fetch({
       method: 'POST',
       url: '/account/login',
       body: data
@@ -101,19 +102,20 @@ export class Hapi extends Backend {
         throw (error)
       })
   }
+
   /**
    * ### logout
    * prepare the request and call _fetch
    */
   async logout () {
-    return await this._fetch({
+    return this._fetch({
       method: 'POST',
       url: '/account/logout',
       body: {}
     })
       .then((res) => {
         if ((res.status === 200 || res.status === 201) ||
-            (res.status === 400 && res.code === 209)) {
+          (res.status === 400 && res.code === 209)) {
           return {}
         } else {
           throw new Error({code: res.statusCode, error: res.message})
@@ -123,6 +125,7 @@ export class Hapi extends Backend {
         throw (error)
       })
   }
+
   /**
    * ### resetPassword
    * the data is already in a JSON format, so call _fetch
@@ -135,7 +138,7 @@ export class Hapi extends Backend {
    * if error:  {code: xxx, error: 'message'}
    */
   async resetPassword (data) {
-    return await this._fetch({
+    return this._fetch({
       method: 'POST',
       url: '/account/resetPasswordRequest',
       body: data
@@ -152,6 +155,7 @@ export class Hapi extends Backend {
         throw (error)
       })
   }
+
   /**
    * ### getProfile
    * Using the sessionToken, we'll get everything about
@@ -170,7 +174,7 @@ export class Hapi extends Backend {
    * if error, {code: xxx, error: 'message'}
    */
   async getProfile () {
-    return await this._fetch({
+    return this._fetch({
       method: 'GET',
       url: '/account/profile/me'
     })
@@ -185,6 +189,7 @@ export class Hapi extends Backend {
         throw (error)
       })
   }
+
   /**
    * ### updateProfile
    * for this user, update their record
@@ -195,7 +200,7 @@ export class Hapi extends Backend {
    * {username: "barton", email: "barton@foo.com"}
    */
   async updateProfile (userId, data) {
-    return await this._fetch({
+    return this._fetch({
       method: 'POST',
       url: '/account/profile/' + userId,
       body: data
@@ -211,6 +216,7 @@ export class Hapi extends Backend {
         throw (error)
       })
   }
+
   /**
    * ### _fetch
    * A generic function that prepares the request
@@ -230,8 +236,7 @@ export class Hapi extends Backend {
 
     var reqOpts = {
       method: opts.method,
-      headers: {
-      }
+      headers: {}
     }
 
     if (this._sessionToken) {

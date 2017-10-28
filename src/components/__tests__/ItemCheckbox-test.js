@@ -15,8 +15,7 @@ import React from 'react'
 
 import ItemCheckbox from '../ItemCheckbox'
 
-import ReactTestUtils from 'react-addons-test-utils'
-const renderer = ReactTestUtils.createRenderer()
+import ShallowRenderer from 'react-test-renderer/shallow'
 
 /**
  * ## Test
@@ -32,6 +31,7 @@ describe('ItemCheckbox', () => {
       text: 'TextShouldDisplay',
       disabled: false
     }
+    const renderer = new ShallowRenderer()
     renderer.render(<ItemCheckbox {...props} />)
     const tree = renderer.getRenderOutput()
     expect(tree).toMatchSnapshot()
@@ -47,6 +47,7 @@ describe('ItemCheckbox', () => {
       text: 'TextShouldDisplay',
       disabled: false
     }
+    const renderer = new ShallowRenderer()
     renderer.render(<ItemCheckbox {...props} />)
     const tree = renderer.getRenderOutput()
     expect(tree).toMatchSnapshot()
@@ -62,6 +63,7 @@ describe('ItemCheckbox', () => {
       text: 'TextShouldDisplay',
       disabled: true
     }
+    const renderer = new ShallowRenderer()
     renderer.render(<ItemCheckbox {...props} />)
     const tree = renderer.getRenderOutput()
     expect(tree).toMatchSnapshot()
@@ -77,9 +79,9 @@ describe('ItemCheckbox', () => {
       text: 'TextShouldDisplay',
       disabled: true
     }
+    const renderer = new ShallowRenderer()
     renderer.render(<ItemCheckbox {...props} />)
     const tree = renderer.getRenderOutput()
     expect(tree).toMatchSnapshot()
   })
 })// describe ItemCheckbox
-

@@ -1,3 +1,4 @@
+/* eslint-disable import/first */
 /**
  * # profileActions.js
  *
@@ -67,14 +68,14 @@ describe('profileActions', () => {
     var json = {json: true}
     expect(actions.getProfileSuccess(json)).toEqual({type:
                                                      GET_PROFILE_SUCCESS,
-                                                     payload: json})
+    payload: json})
   })
 
   it('should getProfileFailure', () => {
     var json = {json: true}
     expect(actions.getProfileFailure(json)).toEqual({type:
                                                      GET_PROFILE_FAILURE,
-                                                     payload: json})
+    payload: json})
   })
 
   it('should profileUpdateRequest', () => {
@@ -89,7 +90,7 @@ describe('profileActions', () => {
     var json = {json: true}
     expect(actions.profileUpdateFailure(json)).toEqual({type:
                                                         PROFILE_UPDATE_FAILURE,
-                                                        payload: json})
+    payload: json})
   })
 
   it('should onProfileFormFieldChange', () => {

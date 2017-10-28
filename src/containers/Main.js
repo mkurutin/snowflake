@@ -37,11 +37,9 @@ import
   StyleSheet,
   View
 }
-from 'react-native'
+  from 'react-native'
 
-/**
- * The platform neutral button
- */
+import I18n from '../lib/I18n'
 const Button = require('apsl-react-native-button')
 
 /**
@@ -89,18 +87,8 @@ var styles = StyleSheet.create({
     marginRight: 10
   }
 })
-/**
- * ### Translations
- */
-var I18n = require('react-native-i18n')
-import Translations from '../lib/Translations'
-I18n.translations = Translations
 
-/**
- * ## App class
- */
 class Main extends Component {
-
   handlePress () {
     Actions.Subview({
       title: 'Subview'
