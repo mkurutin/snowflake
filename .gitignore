@@ -55,6 +55,3 @@ fastlane/screenshots
 
 # Jest test coverage
 coverage
-
-# app configuration
-src/lib/config.js
